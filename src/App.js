@@ -10,6 +10,7 @@ import {
 import Login from './component/Login/Login';
 import { createContext, useState } from 'react';
 import PrivateRoute from './component/PrivateRoute/PrivateRoute';
+import Booking from './component/Client/Booking/Booking';
 
 export const emailContext = createContext();
 
@@ -29,8 +30,8 @@ function App() {
             <Route  path="/login">
               <Login></Login>
             </Route>
-            <PrivateRoute path='booking'>
-              
+            <PrivateRoute path='/booking'>
+              <Booking></Booking>
             </PrivateRoute>
           </Switch>
         </Router>

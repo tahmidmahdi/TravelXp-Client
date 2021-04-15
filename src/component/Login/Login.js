@@ -8,14 +8,17 @@ import key from '../../images/login.svg'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGoogle } from '@fortawesome/free-brands-svg-icons';
 import { emailContext } from '../../App';
+import { useHistory, useLocation } from 'react-router';
 if (!firebase.apps.length) {
     firebase.initializeApp(firebaseConfig);
 
 }
 const Login = () => {
     const [loggedInUser, setLoggedInUser] = useContext(emailContext);
-
-
+    let history = useHistory();
+    let location = useLocation();
+   
+    let { from } = location.state || { from: { pathname: "/" } };
     const handleGoogleSignIn = () => {
         const googleProvider = new firebase.auth.GoogleAuthProvider();
         firebase.auth()
@@ -32,6 +35,7 @@ const Login = () => {
                 localStorage.setItem('email', user.email)
                 setLoggedInUser(user.email)
                 console.log(loggedInUser);
+                history.replace(from);
 
             }).catch((error) => {
 
@@ -46,13 +50,13 @@ const Login = () => {
     }
     return (
         <div className="row text-center">
-           
+
             <div className="col-md-4">
-                
-                <button onClick={handleGoogleSignIn} className="button login"><FontAwesomeIcon icon={faGoogle}/> Google Sign In</button>
+
+                <button onClick={handleGoogleSignIn} className="button login"><FontAwesomeIcon icon={faGoogle} /> Google Sign In</button>
             </div>
             <div className="col-md-8">
-                <img className="img-fluid" style={{ height: '800px', width: '600px'}}  src={key} alt="" />
+                <img className="img-fluid" style={{ height: '800px', width: '600px' }} src={key} alt="" />
             </div>
         </div>
 

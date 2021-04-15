@@ -1,0 +1,15 @@
+.sidebar{
+    height: 700px;
+    width: 250px;
+    margin-left: 20px;
+    border: 1px solid black;
+    text-align: center;
+}
+.link{
+    text-decoration:none;
+    color:black;
+}
+.link:hover{
+    text-decoration:none;
+    color: black
+}
