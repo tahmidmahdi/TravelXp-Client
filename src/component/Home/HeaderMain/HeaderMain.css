@@ -1,0 +1,15 @@
+.header-main{
+    background-image: url(../../../images/imagewave.png);
+    height: 700px !important;
+    background-position: center;
+    background-size: cover;
+}
+.header-main-h1{
+    
+    color: black;
+    margin-top: 200px
+}
+.header-main-h1 h1{
+    font-size:65px;
+    font-weight: 600;
+}
