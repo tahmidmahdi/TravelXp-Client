@@ -50,7 +50,7 @@ const Services = () => {
     let history = useHistory();
 
     const handleClick = (e) =>{
-        history.push("/booking");
+        history.push("/booking/"+e);
     }
     return (
         <div className="container text-center mt-5 pt-5">
