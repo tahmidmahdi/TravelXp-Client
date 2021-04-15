@@ -6,6 +6,7 @@ import glaciers from '../../../images/glaciers.jpg'
 import luxury from '../../../images/luxxuryBeach.jpg'
 import ladakh from '../../../images/ladakh.jpg'
 import spain from '../../../images/spain.jpg'
+import { useHistory } from 'react-router';
 const services = [
     {
         img: peru,
@@ -46,12 +47,17 @@ const services = [
 ]
 
 const Services = () => {
+    let history = useHistory();
+
+    const handleClick = (e) =>{
+        history.push("/login");
+    }
     return (
         <div className="container text-center mt-5 pt-5">
             <h1>Explore The World With Us</h1>
             <div className='row' >
                 {
-                    services.map(service => <ServicesList service={service}></ServicesList>)
+                    services.map(service => <ServicesList service={service} handleClick={handleClick}></ServicesList>)
                 }
             </div>
         </div>

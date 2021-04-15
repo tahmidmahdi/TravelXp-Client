@@ -1,7 +1,7 @@
 import React from 'react';
 import { Button, Card } from 'react-bootstrap';
 
-const ServicesList = ({ service }) => {
+const ServicesList = ({ service, handleClick }) => {
     return (
         <div className='col-md-4'>
             <Card className='mb-4' style={{ width: '22rem', height:'32rem' }}>
@@ -11,7 +11,7 @@ const ServicesList = ({ service }) => {
                     <Card.Text style={{height:'96px'}}>
                         {service.description}
                     </Card.Text>
-                    <button style={{width:'200px', height:'40px'}} className='button'>Explore the Trip</button>
+                    <button onClick={() => handleClick(service.title)} style={{width:'200px', height:'40px'}} className='button'>Book the Trip</button>
                 </Card.Body>
             </Card>
         </div>
