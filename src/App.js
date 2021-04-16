@@ -13,6 +13,8 @@ import PrivateRoute from './component/PrivateRoute/PrivateRoute';
 import Booking from './component/Client/Booking/Booking';
 import BookingList from './component/Client/BookingList/BookingList';
 import Review from './component/Client/Review/Review';
+import OrderList from './component/Admin/OrderList/OrderList';
+import AddService from './component/Admin/AddService/AddService';
 
 export const emailContext = createContext();
 
@@ -40,6 +42,12 @@ function App() {
             </PrivateRoute>
             <PrivateRoute path='/review'>
               <Review></Review>
+            </PrivateRoute>
+            <PrivateRoute path='/admin'>
+              <OrderList></OrderList>
+            </PrivateRoute>
+            <PrivateRoute path='/addservice'>
+              <AddService></AddService>
             </PrivateRoute>
             <Router path='/bookinglist'>
               <BookingList></BookingList>

@@ -69,7 +69,7 @@ const Booking = () => {
                     <br/>
                     <label htmlFor="event">Event You Want To Booked</label>
                     <br/>
-                    <input defaultValue={e} {...register("event", { required: true })} placeholder="Enter Your Name" />
+                    <input defaultValue={e} {...register("event", { required: true })} placeholder="Event You Choose" />
                     <br/> 
                     {errors.event && <span>This field is required</span>}
                     <br/> <br/>
