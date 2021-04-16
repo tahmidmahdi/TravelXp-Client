@@ -1,13 +1,13 @@
 import React, { useState } from 'react';
 
-import {CardElement, useStripe, useElements} from '@stripe/react-stripe-js';
+import { CardElement, useStripe, useElements } from '@stripe/react-stripe-js';
 
 const SimpleCardForm = () => {
   const stripe = useStripe();
   const elements = useElements();
 
   const [successful, setSuccessful] = useState(null)
-  const [error, setError] = useState(null)
+  const [paymentError, setPaymentError] = useState(null)
 
   const handleSubmit = async (event) => {
     // Block native form submission.
@@ -25,34 +25,39 @@ const SimpleCardForm = () => {
     const cardElement = elements.getElement(CardElement);
 
     // Use your card Element with other Stripe.js APIs
-    const {error, paymentMethod} = await stripe.createPaymentMethod({
+    const { error, paymentMethod } = await stripe.createPaymentMethod({
       type: 'card',
       card: cardElement,
     });
 
     if (error) {
       console.log('[error]', error);
-      setError(error);
+      setPaymentError(error.message);
       setSuccessful(null)
     } else {
-      console.log('[PaymentMethod]', paymentMethod);
-      setSuccessful('Success')
-      setError(null);
+      // console.log('[PaymentMethod]', paymentMethod);
+      setSuccessful(paymentMethod.id)
+      setPaymentError(null);
     }
+    alert('Booking Successful')
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <CardElement />
-      <br/>
-      <button className="button" type="submit" disabled={!stripe}>
-        Pay With Card
-      </button>
+    <div>
+      <form onSubmit={handleSubmit}>
+        <CardElement />
+        <br />
+        <button className="button" type="submit" disabled={!stripe}>
+          Pay With Card
+        </button>
+      </form>
       {
-          successful ? <p className="text-success">Payment Success</p> : <p className="text-danger">Error While Transaction. Try Again</p>
+        paymentError && <p className="text-danger">{paymentError}</p>
       }
-      
-    </form>
+      {
+        successful && <p className="text-success">Your Payment Is Successful</p>
+      }
+    </div>
   );
 };
 export default SimpleCardForm;
