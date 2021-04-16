@@ -11,6 +11,8 @@ import Login from './component/Login/Login';
 import { createContext, useState } from 'react';
 import PrivateRoute from './component/PrivateRoute/PrivateRoute';
 import Booking from './component/Client/Booking/Booking';
+import BookingList from './component/Client/BookingList/BookingList';
+import Review from './component/Client/Review/Review';
 
 export const emailContext = createContext();
 
@@ -33,6 +35,16 @@ function App() {
             <PrivateRoute path='/booking/:e'>
               <Booking></Booking>
             </PrivateRoute>
+            <PrivateRoute path='/booking'>
+              <Booking></Booking>
+            </PrivateRoute>
+            <PrivateRoute path='/review'>
+              <Review></Review>
+            </PrivateRoute>
+            <Router path='/bookinglist'>
+              <BookingList></BookingList>
+            </Router>
+            
           </Switch>
         </Router>
     </emailContext.Provider>
