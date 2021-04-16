@@ -2,6 +2,7 @@ import React, { useContext } from 'react';
 import { useForm } from 'react-hook-form';
 import { useParams } from 'react-router';
 import { emailContext } from '../../../App';
+import ProcessPayment from '../ProcessPayment/ProcessPayment';
 import Sidebar from '../Sidebar/Sidebar';
 import './Booking.css'
 
@@ -54,7 +55,13 @@ const Booking = () => {
                     <button style={{width:'400px'}} className="button">Book</button>
                 </form>
 
+
+                <br/> <br/>
+                <h4>Pay With Card</h4>
+                <br/>
+                <ProcessPayment></ProcessPayment>
             </div>
+           
         </div>
     );
 };

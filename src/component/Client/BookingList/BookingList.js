@@ -18,7 +18,7 @@ const BookingList = () => {
     
     return (
         <div className="row">
-            <div className="col-md-4">
+            <div className="col-md-4" style={{height:'22rem'}}>
                 <Sidebar></Sidebar>
             </div>
  
