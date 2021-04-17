@@ -11,7 +11,7 @@ const ServicesList = ({ service, handleClick }) => {
                     <Card.Text style={{height:'96px'}}>
                         {service.description}
                     </Card.Text>
-                    <button onClick={() => handleClick(service.serviceName)} style={{width:'200px', height:'40px'}} className='button'>Book the Trip</button>
+                    <button onClick={() => handleClick(service.serviceName)} style={{width:'250px', height:'50px'}} className='button'>Book the Trip</button>
                 </Card.Body>
             </Card>
         </div>
