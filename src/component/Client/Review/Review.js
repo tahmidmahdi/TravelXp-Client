@@ -4,11 +4,11 @@ import Sidebar from '../Sidebar/Sidebar';
 import './Review.css'
 
 const Review = () => {
-    const { register, handleSubmit, watch, formState: { errors } } = useForm();
+    const { register, handleSubmit,  formState: { errors } } = useForm();
     const onSubmit = data => {
         console.log(data);
 
-        fetch(`http://localhost:4000/addReview`, {
+        fetch(`https://secure-sea-65701.herokuapp.com/addReview`, {
             method: 'POST',
             headers: {'Content-Type': 'application/json'},
             body: JSON.stringify(data)

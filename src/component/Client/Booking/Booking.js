@@ -8,13 +8,13 @@ import './Booking.css'
 
 const Booking = () => {
     const[loggedInUser] = useContext(emailContext)
-    const { register, handleSubmit, watch, formState: { errors } } = useForm();
-    const [book, setBook] = useState({})
+    const { register, handleSubmit,  formState: { errors } } = useForm();
+    // const [book, setBook] = useState({})
 
 
     const onSubmit = data => {
         
-        fetch(`http://localhost:4000/book`,{
+        fetch(`https://secure-sea-65701.herokuapp.com/book`,{
             method: 'POST',
             headers: { 'Content-type':'application/json' },
             body: JSON.stringify(data)
@@ -32,7 +32,7 @@ const Booking = () => {
 
     //     book.paymentId = paymentId
 
-    //     fetch(`http://localhost:4000/book`,{
+    //     fetch(`https://secure-sea-65701.herokuapp.com/book`,{
     //         method: 'POST',
     //         headers: { 'Content-type':'application/json' },
     //         body: JSON.stringify(book)

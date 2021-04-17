@@ -4,7 +4,7 @@ import TestimonialsCart from '../TestimonialsCart/TestimonialsCart';
 const Testimonials = () => {
     const [reviews, setReviews] = useState([])
     useEffect(() => {
-        fetch(`http://localhost:4000/getReview`)
+        fetch(`https://secure-sea-65701.herokuapp.com/getReview`)
         .then(res => res.json())
         .then(data => setReviews(data))
     },[])

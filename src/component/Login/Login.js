@@ -3,7 +3,7 @@ import firebase from "firebase/app";
 import "firebase/auth";
 import firebaseConfig from './firebase.config';
 import './Login.css'
-import africa from '../../images/africa.jpg'
+
 import key from '../../images/login.svg'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGoogle } from '@fortawesome/free-brands-svg-icons';
@@ -17,7 +17,20 @@ const Login = () => {
     const [loggedInUser, setLoggedInUser] = useContext(emailContext);
     let history = useHistory();
     let location = useLocation();
-   
+
+
+    const handleLoggedIn = () => {
+        
+            fetch(`https://secure-sea-65701.herokuapp.com/loggedIn`, {
+                method: 'POST',
+                headers: { 'Content-type': 'application/json' },
+                body: JSON.stringify( {email: loggedInUser})
+            })
+            .then(console.log('added'))
+     
+    }
+
+
     let { from } = location.state || { from: { pathname: "/" } };
     const handleGoogleSignIn = () => {
         const googleProvider = new firebase.auth.GoogleAuthProvider();
@@ -29,11 +42,13 @@ const Login = () => {
 
 
                 var token = credential.accessToken;
+                console.log(token);
 
                 var user = result.user;
                 // console.log(user.email);
                 localStorage.setItem('email', user.email)
                 setLoggedInUser(user.email)
+                handleLoggedIn();
                 console.log(loggedInUser);
                 history.replace(from);
 
@@ -45,6 +60,7 @@ const Login = () => {
                 var email = error.email;
 
                 var credential = error.credential;
+                console.log(errorCode, errorMessage, email, credential);
 
             });
     }

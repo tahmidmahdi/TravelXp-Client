@@ -10,7 +10,7 @@ const BookingList = () => {
     const [bookings, setBookings] = useState([])
     const[loggedInUser] = useContext(emailContext)
     useEffect(() => {
-        fetch(`http://localhost:4000/getBookingList/`+loggedInUser)
+        fetch(`https://secure-sea-65701.herokuapp.com/getBookingList/`+loggedInUser)
         .then(res => res.json())
         .then(data => setBookings(data))
     },[])

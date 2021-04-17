@@ -1,4 +1,3 @@
-import logo from './logo.svg';
 import './App.css';
 import Home from './component/Home/Home/Home';
 import {
@@ -15,6 +14,8 @@ import BookingList from './component/Client/BookingList/BookingList';
 import Review from './component/Client/Review/Review';
 import OrderList from './component/Admin/OrderList/OrderList';
 import AddService from './component/Admin/AddService/AddService';
+import MakeAdmin from './component/Admin/MakeAdmin/MakeAdmin';
+import ManageService from './component/Admin/ManageService/ManageService';
 
 export const emailContext = createContext();
 
@@ -48,6 +49,12 @@ function App() {
             </PrivateRoute>
             <PrivateRoute path='/addservice'>
               <AddService></AddService>
+            </PrivateRoute>
+            <PrivateRoute path='/makeadmin'>
+              <MakeAdmin></MakeAdmin>
+            </PrivateRoute>
+            <PrivateRoute path='/manage'>
+              <ManageService></ManageService>
             </PrivateRoute>
             <Router path='/bookinglist'>
               <BookingList></BookingList>

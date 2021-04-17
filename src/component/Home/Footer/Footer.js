@@ -4,7 +4,7 @@ import call from '../../../images/call-back.svg'
 import message from '../../../images/message.svg'
 import chat from '../../../images/chat.svg'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faFacebook, faFacebookSquare, faInstagram, faInstagramSquare, faLinkedinIn, faTwitter } from '@fortawesome/free-brands-svg-icons';
+import { faFacebook,  faInstagram,  faLinkedinIn, faTwitter } from '@fortawesome/free-brands-svg-icons';
 
 const Footer = () => {
     return (

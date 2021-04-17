@@ -22,7 +22,7 @@ const AddService = () => {
 
     }
 
-    const { register, handleSubmit, watch, formState: { errors } } = useForm();
+    const { register, handleSubmit,  formState: { errors } } = useForm();
     const onSubmit = data => {
         const newData = { ...data };
         newData.image = imgURL;
@@ -30,7 +30,7 @@ const AddService = () => {
 
         console.log(newData);
 
-        fetch(`http://localhost:4000/addEvent`,{
+        fetch(`https://secure-sea-65701.herokuapp.com/addEvent`,{
             method: 'POST',
             headers: {'Content-Type': 'application/json'},
             body: JSON.stringify(newData)
