@@ -49,7 +49,7 @@ const Footer = () => {
                         <h5>Subscribe to Our NewsLetter</h5>
                         <div class="input-group mb-3">
                             <input type="text" class="form-control" placeholder="Recipient's Email" aria-label="Recipient's username" aria-describedby="button-addon2" />
-                            <button class="btn btn-outline-secondary" type="button" id="button-addon2">Button</button>
+                            <button class="btn btn-outline-secondary" type="button" id="button-addon2">Subs</button>
                         </div>
                         <div>
                             <FontAwesomeIcon icon={faFacebook} size={'2x'} /> {' '}
