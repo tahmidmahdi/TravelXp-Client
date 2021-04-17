@@ -13,7 +13,7 @@ const BookingList = () => {
         fetch(`https://secure-sea-65701.herokuapp.com/getBookingList/`+loggedInUser)
         .then(res => res.json())
         .then(data => setBookings(data))
-    },[])
+    },[loggedInUser])
     console.log(bookings);
     
     return (

@@ -3,7 +3,7 @@ import React from 'react';
 const GetBookingList = ({book}) => {
     return (
         <div className=" container col-md-4 mt-5">
-            <div style={{cursor:'pointer'}} class="card" style={{width: "22rem"}}>
+            <div style={{cursor:'pointer',width: "22rem"}} class="card" >
                 <div class="card-body">
                     <h5 class="card-title">{book.event}</h5>
                     <br/>
