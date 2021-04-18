@@ -16,6 +16,7 @@ const Booking = () => {
     const onSubmit = data => {
         const newData = {...data}
         newData.payment = paymentInfo;
+        newData.status = 'pending'
         fetch(`https://secure-sea-65701.herokuapp.com/book`,{
             method: 'POST',
             headers: { 'Content-type':'application/json' },
@@ -63,7 +64,8 @@ const Booking = () => {
                     <br/> 
                     {errors.event && <span>This field is required</span>}
                     <br/> <br/>
-                   {(paymentInfo[0]) && <button style={{width:'400px'}} className="button">Book</button>}
+                   {/* {(paymentInfo[0]) && <button style={{width:'400px'}} className="button">Book</button>} */}
+                    <button style={{width:'400px'}} className="button">Book</button>
                 </form>
 
 

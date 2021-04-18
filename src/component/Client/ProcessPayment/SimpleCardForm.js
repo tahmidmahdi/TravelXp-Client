@@ -9,7 +9,7 @@ const SimpleCardForm = () => {
 
   const [successful, setSuccessful] = useState(null)
   const [paymentError, setPaymentError] = useState(null)
-  const [ setPaymentInfo] = useContext(paymentContext)
+  const [paymentInfo, setPaymentInfo] = useContext(paymentContext)
 
   const handleSubmit = async (event) => {
     // Block native form submission.
@@ -43,6 +43,7 @@ const SimpleCardForm = () => {
       setPaymentInfo(paymentMethod.id)
     }
     alert('Booking Successful')
+    console.log(paymentInfo);
   };
 
   return (
