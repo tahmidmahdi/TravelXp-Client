@@ -18,15 +18,15 @@ const Login = () => {
     let history = useHistory();
     let location = useLocation();
 
-    const [admin, setAdmin] = useContext(adminContext)
+    const [ setAdmin] = useContext(adminContext)
 
 
         useEffect(() => {
             fetch(`https://secure-sea-65701.herokuapp.com/isAdmin`)
                 .then(res => res.json())
                 .then(data => setAdmin(data))
-                console.log(`admin`, admin);
-        }, [])
+                
+        }, [setAdmin])
 
         
 

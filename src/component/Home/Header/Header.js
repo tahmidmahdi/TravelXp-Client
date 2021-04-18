@@ -9,7 +9,7 @@ const Header = () => {
     const [loggedInUser] = useContext(emailContext);
     const [admin] = useContext(adminContext);
 
-    const isAdmin = admin.find(ad => ad.adminemail == loggedInUser)
+    const isAdmin = admin.find(ad => ad.adminemail === loggedInUser)
     console.log(`is admin`, isAdmin);
 
     return (
