@@ -1,11 +1,16 @@
 import React from 'react';
 import { Card } from 'react-bootstrap';
+import './ServiceList.css'
+
+
+
 
 const ServicesList = ({ service, handleClick }) => {
+    
     return (
         <div className='col-md-4'>
-            <Card className='mb-4' style={{ width: '22rem', height:'32rem' }}>
-                <Card.Img variant="top" src={service.image} style={{height:'15rem'}}/>
+            <Card className='mb-4 ' style={{ width: '22rem', height:'32rem' }}>
+                <Card.Img className='card-img' variant="top" src={service.image} style={{height:'15rem'}} />
                 <Card.Body>
                     <Card.Title>{service.serviceName}</Card.Title>
                     <Card.Text style={{height:'96px'}}>

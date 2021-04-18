@@ -1,6 +1,7 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 
 import { CardElement, useStripe, useElements } from '@stripe/react-stripe-js';
+import { paymentContext } from '../../../App';
 
 const SimpleCardForm = () => {
   const stripe = useStripe();
@@ -8,6 +9,7 @@ const SimpleCardForm = () => {
 
   const [successful, setSuccessful] = useState(null)
   const [paymentError, setPaymentError] = useState(null)
+  const [ setPaymentInfo] = useContext(paymentContext)
 
   const handleSubmit = async (event) => {
     // Block native form submission.
@@ -35,9 +37,10 @@ const SimpleCardForm = () => {
       setPaymentError(error.message);
       setSuccessful(null)
     } else {
-      // console.log('[PaymentMethod]', paymentMethod);
+      console.log('[PaymentMethod]', paymentMethod);
       setSuccessful(paymentMethod.id)
       setPaymentError(null);
+      setPaymentInfo(paymentMethod.id)
     }
     alert('Booking Successful')
   };

@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import { useForm } from 'react-hook-form';
 import { useParams } from 'react-router';
-import { emailContext } from '../../../App';
+import { emailContext, paymentContext } from '../../../App';
 import ProcessPayment from '../ProcessPayment/ProcessPayment';
 import Sidebar from '../Sidebar/Sidebar';
 import './Booking.css'
@@ -9,40 +9,30 @@ import './Booking.css'
 const Booking = () => {
     const[loggedInUser] = useContext(emailContext)
     const { register, handleSubmit,  formState: { errors } } = useForm();
-    // const [book, setBook] = useState({})
+    const [paymentInfo] = useContext(paymentContext)
+
 
 
     const onSubmit = data => {
-        
+        const newData = {...data}
+        newData.payment = paymentInfo;
         fetch(`https://secure-sea-65701.herokuapp.com/book`,{
             method: 'POST',
             headers: { 'Content-type':'application/json' },
-            body: JSON.stringify(data)
+            body: JSON.stringify(newData)
         })
         .then(console.log('successfull'))
         console.log(data)
+        
     };
 
 
     const {e} = useParams()
     console.log('params', e);
 
+    console.log(`paymentinfo`, paymentInfo);
 
-    // const handlePaymentSuccess = paymentId =>{
-
-    //     book.paymentId = paymentId
-
-    //     fetch(`https://secure-sea-65701.herokuapp.com/book`,{
-    //         method: 'POST',
-    //         headers: { 'Content-type':'application/json' },
-    //         body: JSON.stringify(book)
-    //     })
-    //     .then(console.log('successfull'))
-    //     console.log(book)
-    // }
-   
-
-    // style={{display: book ? 'none':'block'}}
+    
 
 
     return (
@@ -73,7 +63,7 @@ const Booking = () => {
                     <br/> 
                     {errors.event && <span>This field is required</span>}
                     <br/> <br/>
-                    <button style={{width:'400px'}} className="button">Book</button>
+                   {(paymentInfo[0]) && <button style={{width:'400px'}} className="button">Book</button>}
                 </form>
 
 

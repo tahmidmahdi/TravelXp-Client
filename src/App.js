@@ -19,52 +19,56 @@ import ManageService from './component/Admin/ManageService/ManageService';
 
 export const emailContext = createContext();
 export const adminContext = createContext();
+export const paymentContext = createContext();
 
 function App() {
   const [loggedInUser, setLoggedInUser]  = useState(null)
   const [admin, setAdmin]  = useState([])
+  const [paymentInfo , setPaymentInfo]  = useState({})
   return (
    
     <emailContext.Provider value={[loggedInUser, setLoggedInUser]}>
        <adminContext.Provider value={[admin, setAdmin]}>
-          <Router>
-            <Switch>
-              <Route exact path="/">
-                <Home></Home>
-              </Route>
-              <Route  path="/home">
-                <Home></Home>
-              </Route>
-              <Route  path="/login">
-                <Login></Login>
-              </Route>
-              <PrivateRoute path='/booking/:e'>
-                <Booking></Booking>
-              </PrivateRoute>
-              <PrivateRoute path='/booking'>
-                <Booking></Booking>
-              </PrivateRoute>
-              <PrivateRoute path='/review'>
-                <Review></Review>
-              </PrivateRoute>
-              <PrivateRoute path='/admin'>
-                <OrderList></OrderList>
-              </PrivateRoute>
-              <PrivateRoute path='/addservice'>
-                <AddService></AddService>
-              </PrivateRoute>
-              <PrivateRoute path='/makeadmin'>
-                <MakeAdmin></MakeAdmin>
-              </PrivateRoute>
-              <PrivateRoute path='/manage'>
-                <ManageService></ManageService>
-              </PrivateRoute>
-              <Router path='/bookinglist'>
-                <BookingList></BookingList>
-              </Router>
-              
-            </Switch>
-          </Router>
+          <paymentContext.Provider value={[paymentInfo, setPaymentInfo]}>
+            <Router>
+              <Switch>
+                <Route exact path="/">
+                  <Home></Home>
+                </Route>
+                <Route  path="/home">
+                  <Home></Home>
+                </Route>
+                <Route  path="/login">
+                  <Login></Login>
+                </Route>
+                <PrivateRoute path='/booking/:e'>
+                  <Booking></Booking>
+                </PrivateRoute>
+                <PrivateRoute path='/booking'>
+                  <Booking></Booking>
+                </PrivateRoute>
+                <PrivateRoute path='/review'>
+                  <Review></Review>
+                </PrivateRoute>
+                <PrivateRoute path='/admin'>
+                  <OrderList></OrderList>
+                </PrivateRoute>
+                <PrivateRoute path='/addservice'>
+                  <AddService></AddService>
+                </PrivateRoute>
+                <PrivateRoute path='/makeadmin'>
+                  <MakeAdmin></MakeAdmin>
+                </PrivateRoute>
+                <PrivateRoute path='/manage'>
+                  <ManageService></ManageService>
+                </PrivateRoute>
+                <Router path='/bookinglist'>
+                  <BookingList></BookingList>
+                </Router>
+                
+              </Switch>
+            </Router>
+          </paymentContext.Provider>
        </adminContext.Provider>
     </emailContext.Provider>
    
