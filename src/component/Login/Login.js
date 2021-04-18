@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect } from 'react';
 import firebase from "firebase/app";
 import "firebase/auth";
 import firebaseConfig from './firebase.config';
@@ -7,7 +7,7 @@ import './Login.css'
 import key from '../../images/login.svg'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGoogle } from '@fortawesome/free-brands-svg-icons';
-import { emailContext } from '../../App';
+import { adminContext, emailContext } from '../../App';
 import { useHistory, useLocation } from 'react-router';
 if (!firebase.apps.length) {
     firebase.initializeApp(firebaseConfig);
@@ -18,17 +18,20 @@ const Login = () => {
     let history = useHistory();
     let location = useLocation();
 
+    const [admin, setAdmin] = useContext(adminContext)
 
-    const handleLoggedIn = () => {
+
+        useEffect(() => {
+            fetch(`https://secure-sea-65701.herokuapp.com/isAdmin`)
+                .then(res => res.json())
+                .then(data => setAdmin(data))
+                console.log(`admin`, admin);
+        }, [])
+
         
-            fetch(`https://secure-sea-65701.herokuapp.com/loggedIn`, {
-                method: 'POST',
-                headers: { 'Content-type': 'application/json' },
-                body: JSON.stringify( {email: loggedInUser})
-            })
-            .then(console.log('added'))
-     
-    }
+
+  
+
 
 
     let { from } = location.state || { from: { pathname: "/" } };
@@ -48,9 +51,11 @@ const Login = () => {
                 // console.log(user.email);
                 localStorage.setItem('email', user.email)
                 setLoggedInUser(user.email)
-                handleLoggedIn();
+                // handleLoggedIn();
                 console.log(loggedInUser);
                 history.replace(from);
+                // console.log(`admin`, admin);
+
 
             }).catch((error) => {
 

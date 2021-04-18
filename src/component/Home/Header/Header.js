@@ -1,13 +1,20 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Nav, Navbar } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
+import { adminContext, emailContext } from '../../../App';
 // import HeaderMain from '../HeaderMain/HeaderMain';
 import './Header.css'
 
 const Header = () => {
+    const [loggedInUser] = useContext(emailContext);
+    const [admin] = useContext(adminContext);
+
+    const isAdmin = admin.find(ad => ad.adminemail == loggedInUser)
+    console.log(`is admin`, isAdmin);
+
     return (
 
-        <Navbar  expand="lg" className="container">
+        <Navbar expand="lg" className="container">
             <Navbar.Brand href="#home">Travel XP</Navbar.Brand>
             <Navbar.Toggle aria-controls="basic-navbar-nav" />
             <Navbar.Collapse id="basic-navbar-nav" >
@@ -16,11 +23,11 @@ const Header = () => {
                     <Link className="nav-link" to="/login"><span className="text-white">Login</span></Link>
                     <Link className="nav-link" to="/home"><span className="text-white">Travel Guide</span></Link>
                     <Link className="nav-link" to="/home"><span className="text-white">Discover</span></Link>
-                    <Link className="nav-link" to="/booking"><span className="text-white">Booking</span></Link>
-                    <Link className="nav-link" to="/admin"><span className="text-white">Admin</span></Link>
-                   
+                    {(isAdmin === undefined) && <Link className="nav-link" to="/booking"><span className="text-white">Booking</span></Link>}
+                    {(isAdmin) && <Link className="nav-link" to="/admin"><span className="text-white">Admin</span></Link>}
+
                 </Nav>
-                
+
             </Navbar.Collapse>
         </Navbar>
 

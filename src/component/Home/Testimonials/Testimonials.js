@@ -17,6 +17,7 @@ const Testimonials = () => {
                     reviews.map(review => <TestimonialsCart key={review._id} review={review}></TestimonialsCart>)
                 }
             </div>
+           <div className="text-center mt-3"> <button className="button ">Load More Review</button></div>
         </div>
     );
 };
