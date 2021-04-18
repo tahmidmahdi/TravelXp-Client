@@ -1,71 +1,69 @@
-# Getting Started with Create React App
+# Travel XP 
+This is a travel based app and it can book your next travel destination.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<!-- This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app). -->
 
-## Available Scripts
+## About This Project
 
-In the project directory, you can run:
+We have implemented security in this site. Private Routing is a part of it. A user can not book any event if he/she isn't signned in. Firebase  Google SignIn  is implemented for security. We have also added 'Book'  pannel where a user can Book His/Her preferred event.A review panel is also added to give review. We have upload images in imgbb server and generates a dynamic img link.
+Role based Authentication is also implemented.  We can also delete a event but a user must need to be logged in and must be an admin.
 
-### `npm start`
+##Technologies Used for Building the site
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+### `MongoDB`
 
-### `npm test`
+To store our data I have used MongoDB
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `npm run build`
+### `Express JS`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+To do CRUD operation I have used Express JS 
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### `React JS`
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Full Project is Based on ReactJS. We have used many components to Build the site.
 
-### `npm run eject`
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+### `Node JS`
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+To do backend operation I have used Express JS 
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+### `React Router`
 
-## Learn More
+To do Routing
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### `React Hook Form`
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+To validate a Form
 
-### Code Splitting
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+### `Bootstrap`
 
-### Analyzing the Bundle Size
+We have Used BootStrap to design our site also to make it responsive.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+### `React Bootstrap`
 
-### Making a Progressive Web App
+We have Used React BootStrap to design our site also to make it responsive.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+### `Font Awesome Icons`
 
-### Advanced Configuration
+Font Awesome Icons have been used to design.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+### `Material UI`
 
-### Deployment
+Material UI is used for designing.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+### `HTML & CSS`
 
-### `npm run build` fails to minify
+HTML & CSS is a core part for building a site. I have also used HTML & CSS.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
-"# complete-website-client-tahmidmahdi" 
+
+### `NETLIFY LIVE SITE LINK`
+[LiveSite](https://travelxp.netlify.app/) --click to view Live Site
+
+
+
+### `Heroku LIVE SITE LINK`
+[LiveSite](https://secure-sea-65701.herokuapp.com/) --click to view Live Site for backend

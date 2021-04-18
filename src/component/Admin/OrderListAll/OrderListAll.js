@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
 
 const OrderListAll = ({ order }) => {
-    const [objId, setObjId] = useState(null)
+    const [objId, setObjId] = useState('')
     const handleChange = event => {
         console.log(event);
         setObjId(event)
@@ -18,9 +18,12 @@ const OrderListAll = ({ order }) => {
 
         fetch(`https://secure-sea-65701.herokuapp.com/statusUpdate`,{
             method: 'POST',
+            // mode: "no-cors",
             headers: { 'Content-type': 'application/json'},
             body: JSON.stringify(newData)
         })
+        .then(res => res.json())
+        .then(data => console.log(data))
     }
   
     return (
