@@ -64,8 +64,8 @@ const Booking = () => {
                     <br/> 
                     {errors.event && <span>This field is required</span>}
                     <br/> <br/>
-                   {/* {(paymentInfo[0]) && <button style={{width:'400px'}} className="button">Book</button>} */}
-                    <button style={{width:'400px'}} className="button">Book</button>
+                   {(paymentInfo[0]) && <button style={{width:'400px'}} className="button">Book</button>}
+                    {/* <button style={{width:'400px'}} className="button">Book</button> */}
                 </form>
 
 
