@@ -3,7 +3,7 @@ import qoute from '../../../images/left-quotes-sign.svg'
 
 const TestimonialsCart = ({review}) => {
     return (
-        <div className="col-md-4 mt-3">
+        <div className="col-md-4 mt-3 meetGuide">
             <div class="card" style={{width: "18rem"}}>
                 <div class="card-body">
                     <h5 class="card-title">{review.name}</h5>

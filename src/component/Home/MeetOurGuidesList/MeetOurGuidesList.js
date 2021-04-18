@@ -4,7 +4,7 @@ import './MeetOurGuideList.css'
 
 const MeetOurGuidesList = ({ guide }) => {
     return (
-        <div className="col-md-3">
+        <div className="col-md-3 meetGuide ">
             <Card style={{ width: '18rem' }} className="guide-card">
                 <Card.Img style={{height:'24rem'}} variant="top" src={guide.img} />
                 <Card.Body>

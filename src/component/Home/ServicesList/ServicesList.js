@@ -8,7 +8,7 @@ import './ServiceList.css'
 const ServicesList = ({ service, handleClick }) => {
     
     return (
-        <div className='col-md-4'>
+        <div className='col-md-4 meetGuide'>
             <Card className='mb-4 ' style={{ width: '22rem', height:'32rem' }}>
                 <Card.Img className='card-img' variant="top" src={service.image} style={{height:'15rem'}} />
                 <Card.Body>

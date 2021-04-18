@@ -19,12 +19,12 @@ const Header = () => {
             <Navbar.Toggle aria-controls="basic-navbar-nav" />
             <Navbar.Collapse id="basic-navbar-nav" >
                 <Nav className="mr-auto ">
-                    <Link className="nav-link" to="/home"><span className="text-white">Home</span></Link>
-                    <Link className="nav-link" to="/login"><span className="text-white">Login</span></Link>
-                    <Link className="nav-link" to="/home"><span className="text-white">Travel Guide</span></Link>
-                    <Link className="nav-link" to="/home"><span className="text-white">Discover</span></Link>
-                    {(isAdmin === undefined) && <Link className="nav-link" to="/booking"><span className="text-white">Booking</span></Link>}
-                    {(isAdmin) && <Link className="nav-link" to="/admin"><span className="text-white">Admin</span></Link>}
+                    <Link className="nav-link" to="/home"><span className="text-white nav-text">Home</span></Link>
+                    <Link className="nav-link" to="/login"><span className="text-white nav-text">Login</span></Link>
+                    <Link className="nav-link" to="/home"><span className="text-white nav-text">Travel Guide</span></Link>
+                    <Link className="nav-link" to="/home"><span className="text-white nav-text">Discover</span></Link>
+                    {(isAdmin === undefined) && <Link className="nav-link" to="/booking nav-text"><span className="text-white">Booking</span></Link>}
+                    {(isAdmin) && <Link className="nav-link" to="/admin"><span className="text-white nav-text">Admin</span></Link>}
 
                 </Nav>
 
