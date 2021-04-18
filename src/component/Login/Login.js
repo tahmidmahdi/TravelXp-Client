@@ -18,7 +18,7 @@ const Login = () => {
     let history = useHistory();
     let location = useLocation();
 
-    const [ setAdmin] = useContext(adminContext)
+    const [ admin,setAdmin] = useContext(adminContext)
 
 
         useEffect(() => {
@@ -26,7 +26,7 @@ const Login = () => {
                 .then(res => res.json())
                 .then(data => setAdmin(data))
                 
-        }, [setAdmin])
+        }, [admin, setAdmin])
 
         
 
