@@ -7,6 +7,7 @@ This is a travel based app and it can book your next travel destination.
 
 We have implemented security in this site. Private Routing is a part of it. A user can not book any event if he/she isn't signned in. Firebase  Google SignIn  is implemented for security. We have also added 'Book'  pannel where a user can Book His/Her preferred event.A review panel is also added to give review. We have upload images in imgbb server and generates a dynamic img link.
 Role based Authentication is also implemented.  We can also delete a event but a user must need to be logged in and must be an admin.
+An admin can also add a event and update status of the booked events. 
 
 ##Technologies Used for Building the site
 
